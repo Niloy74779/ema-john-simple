@@ -26,7 +26,7 @@ function App() {
             <Review></Review>
           </Route>
           <Route path='/manage'>
-            <h1>I Love Mahi.</h1>
+            <h1>Comming Soon.....</h1>
           </Route>
           <Router exact path='/'>
             <Shop></Shop>
