@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Cart = (props) => {
     const cart = props.cart;
@@ -9,7 +6,7 @@ const Cart = (props) => {
      let total = 0;
      for (let i = 0; i < cart.length; i++) {
          const product = cart[i];
-         total = total + product.price;
+         total = total + product.price * product.quantity;
          
      }
 
@@ -42,9 +39,7 @@ const Cart = (props) => {
             <p>Text+Vat : {text}</p>
             <p>Total price : {formatNumber(total + Shipping)}</p>
             <br/>
-            <Link to='/review'>
-            <button className='main-button'><FontAwesomeIcon icon={faShoppingCart} /> Review Order</button>
-            </Link>
+            {props.children}
         </div>
     );
 };
